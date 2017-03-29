@@ -1,19 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @movie.title %>
-</p>
-
-<p>
-  <strong>Genre:</strong>
-  <%= @movie.genre %>
-</p>
-
-<p>
-  <strong>Rating:</strong>
-  <%= @movie.rating %>
-</p>
-
-<%= link_to 'Edit', edit_movie_path(@movie) %> |
-<%= link_to 'Back', movies_path %>
+<div class="card">
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Movie: <%= @movie.title %></li>
+    <li class="list-group-item">description: <%= @movie.description %></li>
+    <li class="list-group-item">Genre: <%= @movie.genre %></li>
+    <li class="list-group-item">Rating: <%= @movie.rating %></li>
+    <li class="list-group-item"><%= link_to 'Edit', edit_movie_path(@movie) %></li>
+    <li class="list-group-item"><%= link_to 'Back', movies_path %></li>
+  </ul>
+</div>

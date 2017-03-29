@@ -1,9 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @actor.name %>
-</p>
-
-<%= link_to 'Edit', edit_actor_path(@actor) %> |
-<%= link_to 'Back', actors_path %>
+<div class="card">
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Name: <%= @actor.name %></li>
+    <li class="list-group-item"><%= link_to 'Edit', edit_actor_path(@actor) %></li>
+    <li class="list-group-item"><%= link_to 'Back', actors_path %></li>
+  </ul>
+</div>

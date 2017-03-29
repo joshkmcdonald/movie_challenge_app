@@ -15,7 +15,7 @@
           <h4><%= movie.title.upcase %></h4>
         </div>
         <div class="card-block">
-          <h4 class="card-title">Short Movie Description Here</h4>
+          <h4 class="card-title"><%= movie.description %></h4>
           
           <p class="card-text">
             Actors:
@@ -33,9 +33,9 @@
           </p>
 
           <div class="row">
-            <%= link_to 'Show', movie, class:'btn btn-primary' %>
-            <%= link_to 'Edit', edit_movie_path(movie), class:'btn btn-primary' %>
-            <%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-primary' %>
+            <%= link_to 'Show', movie, class:'row-buttons btn btn-primary' %>
+            <%= link_to 'Edit', edit_movie_path(movie), class:'row-buttons btn btn-primary' %>
+            <%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' }, class:'row-buttons btn btn-primary' %>
           </div>
         </div>
       </div>
