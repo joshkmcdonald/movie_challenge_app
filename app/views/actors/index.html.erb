@@ -1,27 +1,43 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Actors</h1>
+  <h1 class="page-title">Actors</h1>
+  <%= link_to 'New Actor', new_actor_path, class:'new-link btn btn-secondary' %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<% @actors.each do |actor| %>
+<div class="row actor-row">
+  <div class= "col col-sm-1">
+  </div>
 
-  <tbody>
-    <% @actors.each do |actor| %>
-      <tr>
-        <td><%= actor.name %></td>
-        <td><%= link_to 'Show', actor %></td>
-        <td><%= link_to 'Edit', edit_actor_path(actor) %></td>
-        <td><%= link_to 'Destroy', actor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <div class= "col col-sm-10">
+    
+      <div class="card">
+        <div class="card-header">
+          <h4><%= actor.name.upcase %></h4>
+        </div>
+        <div class="card-block">
+          <h4 class="card-title">Short actor description here</h4>
+          
+          <p class="card-text">
+            Movies:
+            <% actor.movies.each do |movie| %>
+              <%= movie.title %> |
+            <% end %>  
+          </p>
 
-<br>
+          <div class="row">
+            <%= link_to 'Show', actor, class:'btn btn-primary' %>
+            <%= link_to 'Edit', edit_actor_path(actor), class:'btn btn-primary' %>
+            <%= link_to 'Destroy', actor, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-primary' %>
+          </div>
+        </div>
+      </div>
+    
+  </div>
 
-<%= link_to 'New Actor', new_actor_path %>
+  <div class= "col col-md-1">
+  </div>
+
+</div>
+<% end %>
+
+

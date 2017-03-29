@@ -1,1 +1,34 @@
 @import "bootstrap";
+
+.card-header {
+  background-color: #B0C4DE;
+}
+
+.row {
+  margin-bottom: 20px;
+}
+
+#background {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  background: #414660;
+  background-size: cover;
+}
+
+.page-title {
+  color: #fff;
+  margin-left: 130px;
+}
+
+.new-link{
+  margin-left: 130px;
+  margin-bottom: 20px;
+}

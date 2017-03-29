@@ -1,31 +1,53 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Movies</h1>
+<h1 class="page-title">Movies</h1>
+<%= link_to 'New Movie', new_movie_path, class:'new-link btn btn-secondary' %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Genre</th>
-      <th>Rating</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<% @movies.each do |movie| %>
+<div class="row movie-row">
+  <div class= "col col-md-1">
+  </div>
 
-  <tbody>
-    <% @movies.each do |movie| %>
-      <tr>
-        <td><%= movie.title %></td>
-        <td><%= movie.genre %></td>
-        <td><%= movie.rating %></td>
-        <td><%= link_to 'Show', movie %></td>
-        <td><%= link_to 'Edit', edit_movie_path(movie) %></td>
-        <td><%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <div class= "col col-md-10">
+    
+      <div class="card">
+        <div class="card-header">
+          <h4><%= movie.title.upcase %></h4>
+        </div>
+        <div class="card-block">
+          <h4 class="card-title">Short Movie Description Here</h4>
+          
+          <p class="card-text">
+            Actors:
+            <% movie.actors.each do |actor| %>
+              <%= actor.name %> |
+            <% end %>  
+          </p>
 
-<br>
+          <p class="card-text">
+            Genre: <%= movie.genre %>
+          </p>
 
-<%= link_to 'New Movie', new_movie_path %>
+          <p class="card-text">
+            Rating: <%= movie.rating %>
+          </p>
+
+          <div class="row">
+            <%= link_to 'Show', movie, class:'btn btn-primary' %>
+            <%= link_to 'Edit', edit_movie_path(movie), class:'btn btn-primary' %>
+            <%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-primary' %>
+          </div>
+        </div>
+      </div>
+    
+  </div>
+
+  <div class= "col col-md-1">
+  </div>
+
+</div>
+<% end %>
+
+  <br>
+
+  
